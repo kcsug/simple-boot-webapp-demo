@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Simple Boot Webapp</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+<link href="styles.css" rel="stylesheet"></link>
+</head>
+<body>
+	<div class="container col-xs-8 col-xs-offset-2">
+		<h1 class="page-header" th:text="${library.name}"></h1>
+		<a th:text="${library.homepage}" th:href="${library.homepage}"></a>
+		<p th:text="${library.description}"></p>
+		<div th:each="asset : ${library.assets}">
+			<span th:text="${asset.version}"></span>
+			<ul>
+				<li th:each="file : ${asset.files}" th:text="${file}"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

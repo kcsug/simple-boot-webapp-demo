@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Simple Boot Webapp</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+<link href="styles.css" rel="stylesheet"></link>
+</head>
+<body>
+	<div class="container col-xs-8 col-xs-offset-2">
+		<h1 class="page-header">JavaScript Libraries <small> from cdnjs</small></h1>
+		<div class="list-group">
+			<a class="list-group-item" th:each="library : ${libraries}" th:href="'libraries/'+${library.name}" th:text="${library.name}"></a>
+		</div>
+	</div>
+</body>
+</html>
